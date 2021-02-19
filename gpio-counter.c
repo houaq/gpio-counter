@@ -26,7 +26,7 @@
 #include <linux/fs.h>
 #include <linux/time.h>
 
-#include <asm/uaccess.h>
+#include <linux/uaccess.h>
 
 #define DRV_NAME "gpio-counter"
 
@@ -294,7 +294,7 @@ static int gpio_counter_resume(struct device *dev)
     return 0;
 }
 
-static SIMPLE_DEV_PM_OPS(gpio_counter_pm_ops,
+SIMPLE_DEV_PM_OPS(gpio_counter_pm_ops,
          gpio_counter_suspend, gpio_counter_resume);
 
 static struct platform_driver gpio_counter_driver = {
